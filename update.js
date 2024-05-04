@@ -12,6 +12,13 @@ async function main() {
         const database = client.db(dbName);
         const collection = database.collection('product');
 
+        //insert a dummy document
+        const insertResult1 = await collection.insertOne({
+            name: 'Tablet',
+            quantity: 2,
+            brand: 'Samsung'
+        });
+
         //updating quantity belonged to specified product
         const result = await collection.findOneAndUpdate(
             { name: 'Tablet' },
