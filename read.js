@@ -12,6 +12,13 @@ async function main() {
         const database = client.db(dbName);
         const collection = database.collection('orders');
 
+        //insert a document
+        const insertResult1 = await collection.insertOne({
+            order: 'cat food',
+            quantity: 2,
+            customer: 'Zarin'
+        });
+
         //finding document
         await findOrderByCustomer(collection, 'Zarin');
     } catch (e) {
