@@ -19,12 +19,13 @@ async function main() {
         ]);
 
         //deleting users based on ID
+        const deleteId = { id: 1 };
         const result = await collection
-            .deleteOne({ id: 1 });
+            .deleteOne(deleteId);
 
         //print out the result
         if (result) {
-            console.log('Deleted product', result.value);
+            console.log(`Deleted product with ID: ${deleteId.id}`);
             console.log(result);
         } else {
             console.log(`No product found to be deleted`);

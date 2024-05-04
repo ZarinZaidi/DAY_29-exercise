@@ -28,8 +28,7 @@ async function main() {
 
         //print out the result
         if (result) {
-            console.log('Updated product(s)', result.value);
-            console.log(result);
+            console.log('Updated product(s): ', result);
         } else {
             console.log(`No product found to be updated`);
         }

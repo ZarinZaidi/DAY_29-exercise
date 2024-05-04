@@ -12,7 +12,7 @@ async function main() {
         const database = client.db(dbName);
         const collection = database.collection('orders');
 
-        //insert a document
+        //insert a dummy document
         const insertResult1 = await collection.insertOne({
             order: 'cat food',
             quantity: 2,
