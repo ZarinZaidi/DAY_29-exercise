@@ -12,6 +12,12 @@ async function main() {
         const database = client.db(dbName);
         const collection = database.collection('users');
 
+        //insert a dummy document
+        const insertResult1 = await collection.insertMany([
+            { username: 'Princess', id: 1, email: 'queen@yahoo.com' },
+            { username: 'zarin', id: 2, email: 'zarin@yahoo.com' }
+        ]);
+
         //deleting users based on ID
         const result = await collection
             .deleteOne({ id: 1 });
